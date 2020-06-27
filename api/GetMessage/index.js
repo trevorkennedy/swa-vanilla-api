@@ -29,7 +29,6 @@ module.exports = async function (context, req) {
   var msg = 'JavaScript HTTP trigger function request\n';
   msg += `Time: ${new Date().toISOString()}\n`;
   msg += `Runtime: ${process.env['FUNCTIONS_WORKER_RUNTIME']}\n`;
-  msg += `Time Zone: ${process.env['WEBSITE_TIME_ZONE']}\n`;
   msg += `Hostname: ${process.env.WEBSITE_HOSTNAME}\n`;
   msg += `Environment: ${process.env['AZURE_FUNCTIONS_ENVIRONMENT']}\n`;
   msg += `Custom Value: ${process.env['CUSTOM_VALUE']}\n`;
@@ -39,6 +38,6 @@ module.exports = async function (context, req) {
   msg += `File Contents: ${await readFile('./hello.txt')}\n`;
   
   context.log(msg);
-  //context.bindings.sendGrid = buildBody(msg);
+  context.bindings.sendGrid = buildBody(msg);
   context.res = {body: {text: msg}};
 };

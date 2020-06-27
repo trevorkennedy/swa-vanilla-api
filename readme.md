@@ -5,3 +5,5 @@ This repo is used as a starter for a _very basic_ HTML web application using no 
 Example: http://localhost:7071/api/message/1?redirectUrl=blah
 
 az rest --method post --uri "/subscriptions/11c6a30d-3493-4d20-b290-b69f78768e62/resourceGroups/Default_RG/providers/Microsoft.Web/staticSites/vanilla-api/listFunctionAppSettings?api-version=2019-12-01-preview"
+
+az rest --method put --headers "Content-Type=application/json" --uri "/subscriptions/11c6a30d-3493-4d20-b290-b69f78768e62/resourceGroups/Default_RG/providers/Microsoft.Web/staticSites/vanilla-api/config/functionappsettings?api-version=2019-12-01-preview" --body @local.settings.properties.json
