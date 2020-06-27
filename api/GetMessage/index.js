@@ -38,6 +38,13 @@ module.exports = async function (context, req) {
   msg += `File Contents: ${await readFile('./hello.txt')}\n`;
   
   context.log(msg);
-  context.bindings.sendGrid = buildBody(msg);
+
+  try {
+    context.bindings.sendGrid = buildBody(msg);
+    data = await readFileAsync(path);
+  } catch (err) {
+    msg += `SendGrid Error: ${err}\n`;
+  }
+
   context.res = {body: {text: msg}};
 };
