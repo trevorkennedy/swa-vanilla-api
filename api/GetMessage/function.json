@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ],
+      "route": "message/{id:int?}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "sendGrid",
+      "type": "sendGrid",
+      "direction": "out",
+      "to": "%EMAIL_ADDRESS%",
+      "from": "%EMAIL_ADDRESS%",
+      "subject": "SWA Contact Form Submission"
+    }
+  ]
+}
