@@ -4,9 +4,4 @@ This repo is used as a starter for a _very basic_ HTML web application using no 
 
 Example: http://localhost:7071/api/message/1?redirectUrl=blah
 
-az functionapp config appsettings list --name <FUNCTION_APP_NAME> \
---resource-group <RESOURCE_GROUP_NAME>
-
-az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
---resource-group <RESOURCE_GROUP_NAME> \
---settings CUSTOM_FUNCTION_APP_SETTING=12345
+az rest --method post --uri "/subscriptions/11c6a30d-3493-4d20-b290-b69f78768e62/resourceGroups/Default_RG/providers/Microsoft.Web/staticSites/vanilla-api/listFunctionAppSettings?api-version=2019-12-01-preview"

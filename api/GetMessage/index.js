@@ -30,15 +30,12 @@ module.exports = async function (context, req) {
   msg += `Time: ${new Date().toISOString()}\n`;
   msg += `Runtime: ${process.env['FUNCTIONS_WORKER_RUNTIME']}\n`;
   msg += `Time Zone: ${process.env['WEBSITE_TIME_ZONE']}\n`;
-  msg += `Site Name: ${process.env['WEBSITE_SITE_NAME']}\n`;
-  msg += `SKU: ${process.env['WEBSITE_SKU']}\n`;
-  msg += `Compute Mode: ${process.env['WEBSITE_COMPUTE_MODE']}\n`;
   msg += `Hostname: ${process.env.WEBSITE_HOSTNAME}\n`;
   msg += `Environment: ${process.env['AZURE_FUNCTIONS_ENVIRONMENT']}\n`;
   msg += `Custom Value: ${process.env['CUSTOM_VALUE']}\n`;
   msg += `Request Body: ${req.body}\n`;
   msg += `Query Param: ${req.query.redirectUrl}\n`;
-  msg += `Contect biding: ${context.bindingData.id}\n`;
+  msg += `Context biding: ${context.bindingData.id}\n`;
   msg += `File Contents: ${await readFile('./hello.txt')}\n`;
   
   context.log(msg);
