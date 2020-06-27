@@ -20,6 +20,7 @@
       "name": "sendGrid",
       "type": "sendGrid",
       "direction": "out",
+      "apiKey" : "%SENDGRID_API_KEY%",
       "to": "%EMAIL_ADDRESS%",
       "from": "%EMAIL_ADDRESS%",
       "subject": "SWA Contact Form Submission"
